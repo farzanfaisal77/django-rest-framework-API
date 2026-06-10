@@ -1,0 +1,17 @@
+<h1>Welcome to the site</h1>
+
+{% if user.is_authenticated %}
+    <p>Hi {{user.username}}</p>
+
+    <form action="{%url 'logout' %}" method="post" > {%csrf_token%}
+        <button type="submit">Log Out</button>
+    </form>
+{%else%}
+    <p>You are not logged in. Log in or create an account</p>
+
+    <a href="{%url 'login' %}">Login</a> |
+    <a href="{%url 'signup' %}">Sign Up</a>
+
+{% endif %}
+
+<h2>API endpoints</h2>
