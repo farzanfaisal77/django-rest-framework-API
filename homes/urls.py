@@ -7,4 +7,3 @@ urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")),
     path("", HomePageView.as_view(), name="home"),
 ]
-

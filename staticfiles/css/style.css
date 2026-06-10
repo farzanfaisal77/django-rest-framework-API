@@ -1,0 +1,48 @@
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 0 20px;
+    color: #333;
+}
+
+h1 {
+    color: #111;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #222;
+    margin-top: 30px;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.api-endpoints-list {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.api-endpoints-list li {
+    margin-bottom: 8px;
+}
+
+form {
+    display: inline;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    padding: 4px 12px;
+}

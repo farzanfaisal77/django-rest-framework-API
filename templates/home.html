@@ -1,17 +1,32 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 <h1>Welcome to the site</h1>
 
 {% if user.is_authenticated %}
-    <p>Hi {{user.username}}</p>
+<p>Hi {{user.username}}</p>
 
-    <form action="{%url 'logout' %}" method="post" > {%csrf_token%}
-        <button type="submit">Log Out</button>
-    </form>
+<form action="{%url 'logout' %}" method="post"> {%csrf_token%}
+    <button type="submit">Log Out</button>
+</form>
 {%else%}
-    <p>You are not logged in. Log in or create an account</p>
+<p>You are not logged in. Log in or create an account</p>
 
-    <a href="{%url 'login' %}">Login</a> |
-    <a href="{%url 'signup' %}">Sign Up</a>
+<a href="{%url 'login' %}">Login</a> |
+<a href="{%url 'signup' %}">Sign Up</a>
 
 {% endif %}
-
 <h2>API endpoints</h2>
+
+<ul class="api-endpoints-list">
+    <li><a href="{% url 'posts-list' %}">API endpoint for Posts List</a></li>
+    <li><a href="{% url 'users-list' %}">API endpoint for Users List</a></li>
+    <li><a href="{% url 'schema' %}">API endpoint for OpenAPI Schema</a></li>
+    <li><a href="{% url 'swagger-ui' %}">API endpoint for Swagger UI Documentation</a></li>
+    <li><a href="{% url 'redoc' %}">API endpoint for ReDoc Documentation</a></li>
+    <li><a href="{% url 'rest_login' %}">API endpoint for REST Login</a></li>
+    <li><a href="{% url 'rest_logout' %}">API endpoint for REST Logout</a></li>
+    <li><a href="{% url 'rest_user_details' %}">API endpoint for REST User Details</a></li>
+    <li><a href="{% url 'rest_password_change' %}">API endpoint for REST Password Change</a></li>
+    <li><a href="{% url 'rest_password_reset' %}">API endpoint for REST Password Reset</a></li>
+    <li><a href="{% url 'rest_register' %}">API endpoint for REST Registration</a></li>
+</ul>
